@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hackathon To-Do App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Hackathon To-Do List</h1> 
+    <p>Manage tasks collaboratively for the hackathon.</p>
+    <button id="toggle-dark-mode">Toggle Dark Mode</button>
+  </header>
+
+  <section id="todo-section">
+    <form id="todo-form">
+      <input type="text" id="contributor-name" placeholder="Your Name" required>
+      <input type="text" id="task-content" placeholder="Task description..." required>
+      <input type="date" id="due-date" required>
+      <select id="task-priority" required>
+        <option value="">Select Priority</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
+      <button type="submit">Add Task</button>
+    </form>
+    
+    <button id="clear-completed">Clear Completed Tasks</button>
+    <input type="text" id="search-bar" placeholder="Search tasks...">
+    
+    <div id="tasks-container">
+     </div>
+    <div id="task-summary">
+        <div class="task-card">
+          <i class="fas fa-tasks"></i>
+          <div class="task-info">
+            <h2>Total Tasks</h2>
+            <p id="total-tasks">1</p>
+          </div>
+        </div>
+        <div class="task-card">
+          <i class="fas fa-check-circle"></i>
+          <div class="task-info">
+            <h2>Completed Tasks</h2>
+            <p id="completed-tasks">0</p>
+          </div>
+        </div>
+        <div class="task-card">
+          <i class="fas fa-hourglass-half"></i>
+          <div class="task-info">
+            <h2>Pending Tasks</h2>
+            <p id="pending-tasks">1</p>
+          </div>
+        </div>
+      </div>
+      
+      
+     
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
