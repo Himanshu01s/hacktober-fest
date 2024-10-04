@@ -1,7 +1,6 @@
 let tasks = [];
 
-// Load existing tasks from localStorage on page load
-window.onload = function() {
+ window.onload = function() {
   if (localStorage.getItem('tasks')) {
     tasks = JSON.parse(localStorage.getItem('tasks'));
     renderTasks();
@@ -9,8 +8,7 @@ window.onload = function() {
   }
 };
 
-// Handle form submission
-document.getElementById('todo-form').addEventListener('submit', function(e) {
+ document.getElementById('todo-form').addEventListener('submit', function(e) {
   e.preventDefault();
   const name = document.getElementById('contributor-name').value;
   const content = document.getElementById('task-content').value;
@@ -33,7 +31,6 @@ document.getElementById('todo-form').addEventListener('submit', function(e) {
   updateStats();
 });
 
-// Function to render tasks on the page
 function renderTasks() {
   const tasksContainer = document.getElementById('tasks-container');
   tasksContainer.innerHTML = '';
@@ -50,9 +47,10 @@ function renderTasks() {
       taskContent.classList.add('completed');
     }
 
-    const contributor = document.createElement('p');
-    contributor.textContent = `Contributed by ${task.name} on ${task.timestamp}`;
-    contributor.className = 'contributor';
+const contributor = document.createElement('p');
+contributor.textContent = `Contributed by Himanshu on ${task.timestamp}`;  
+contributor.className = 'contributor';
+
 
     const dueDate = document.createElement('p');
     dueDate.textContent = `Due: ${new Date(task.dueDate).toLocaleDateString()}`;
@@ -140,7 +138,6 @@ document.getElementById('clear-completed').addEventListener('click', function() 
   updateStats();
 });
 
-// Search functionality
 document.getElementById('search-bar').addEventListener('keyup', function() {
   const query = this.value.toLowerCase();
   const tasksContainer = document.getElementById('tasks-container');
